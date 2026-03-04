@@ -1,0 +1,208 @@
+.collection {
+  padding: 7rem 0;
+  background: var(--deep);
+}
+
+.collection__container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.collection__header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.collection__eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.collection__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  color: var(--off-white);
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.collection__subtitle {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+}
+
+.collection__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.collection__card {
+  position: relative;
+  background: var(--charcoal);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  cursor: pointer;
+}
+
+.collection__card:hover {
+  border-color: var(--border);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(201, 169, 110, 0.06);
+}
+
+.collection__badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--gold);
+  padding: 0.3rem 0.8rem;
+  z-index: 2;
+}
+
+.collection__image-area {
+  position: relative;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.collection__card-glow {
+  position: absolute;
+  inset: 0;
+}
+
+.collection__bottle-svg {
+  width: 110px;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+}
+
+.collection__card:hover .collection__bottle-svg {
+  transform: scale(1.08);
+}
+
+.collection__card-body {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.collection__descriptor {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.collection__name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--off-white);
+  letter-spacing: 0.08em;
+}
+
+.collection__desc {
+  font-size: 0.75rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+.collection__notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.collection__note {
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid var(--border-light);
+  padding: 0.3rem 0.7rem;
+}
+
+.collection__card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+  margin-top: 0.5rem;
+}
+
+.collection__price {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+
+.collection__add-btn {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--off-white);
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.collection__add-btn:hover {
+  background: var(--gold);
+  color: var(--black);
+  border-color: var(--gold);
+}
+
+@media (max-width: 1024px) {
+  .collection__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .collection {
+    padding: 5rem 0;
+  }
+
+  .collection__container {
+    padding: 0 1.2rem;
+  }
+
+  .collection__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .collection__header {
+    margin-bottom: 3rem;
+  }
+}

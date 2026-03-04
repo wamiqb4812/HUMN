@@ -1,0 +1,30 @@
+@import "../SignIn/SignIn.css";
+
+.admin-login__notice {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: rgba(201, 169, 110, 0.06);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  padding: 0.8rem 1rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--beige);
+  margin-bottom: 1.5rem;
+}
+
+.admin-login__notice-icon {
+  color: var(--gold);
+  font-size: 0.8rem;
+}
+
+.admin-login__btn {
+  background: var(--charcoal) !important;
+  color: var(--gold) !important;
+  border: 1px solid var(--gold) !important;
+}
+
+.admin-login__btn:hover:not(:disabled) {
+  background: var(--gold) !important;
+  color: var(--black) !important;
+}
