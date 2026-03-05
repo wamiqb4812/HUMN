@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { useAuth } from "../../context/AuthContext";
-import { db } from "../../firebase/config";
+import { db } from "../../Firebase/config";
 import "./UserDashboard.css";
 
 const savedPerfumes = [
