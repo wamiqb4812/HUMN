@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import { PrivateRoute, AdminRoute, GuestRoute } from "./routes/ProtectedRoutes";
-import Home from "./pages/Home/Home";
-import SignIn from "./pages/SignIn/SignIn";
-import SignUp from "./pages/SignUp/SignUp";
-import AdminLogin from "./pages/AdminLogin/AdminLogin";
-import UserDashboard from "./pages/UserDashboard/UserDashboard";
-import AdminDashboard from "./pages/AdminDashboard/AdminDashboard";
+import Home from "./pages/Home/Home.jsx";
+import SignIn from "./pages/SignIn/SignIn.jsx";
+import SignUp from "./pages/SignUp/SignUp.jsx";
+import AdminLogin from "./pages/AdminLogin/AdminLogin.jsx";
+import UserDashboard from "./pages/UserDashboard/UserDashboard.jsx";
+import AdminDashboard from "./pages/AdminDashboard/AdminDashboard.jsx";
 import "./styles/global.css";
 
 export default function App() {
