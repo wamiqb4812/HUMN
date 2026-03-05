@@ -3,27 +3,41 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --black:        #030a12;
-  --deep:         #050e1a;
-  --charcoal:     #081525;
-  --warm-dark:    #071220;
-  --beige:        #7ab3d4;
-  --nude:         #a8cfe0;
-  --off-white:    #dff0f8;
-  --cream:        #eef7fc;
-  --gold:         #4a9eca;
-  --gold-light:   #6db8e0;
-  --gold-muted:   #2d6e96;
-  --text-primary:   #dff0f8;
-  --text-secondary: #6a9ab8;
-  --text-muted:     #2e5a78;
-  --border:       rgba(74, 158, 202, 0.22);
-  --border-light: rgba(74, 158, 202, 0.09);
+  /* ── Backgrounds ── */
+  --black:        #061420;
+  --deep:         #071828;
+  --charcoal:     #0a1e30;
+  --warm-dark:    #091a2c;
+
+  /* ── Blue accent tones ── */
+  --beige:        #60c8f5;
+  --nude:         #90d8f8;
+  --off-white:    #e8f7ff;
+  --cream:        #f2fbff;
+
+  /* ── Primary accent = vivid electric blue ── */
+  --gold:         #1ea7e8;
+  --gold-light:   #48c2f5;
+  --gold-muted:   #1178b0;
+
+  /* ── Text ── */
+  --text-primary:   #e8f7ff;
+  --text-secondary: #6bbfe0;
+  --text-muted:     #2d7aa8;
+
+  /* ── Borders ── */
+  --border:       rgba(30, 167, 232, 0.30);
+  --border-light: rgba(30, 167, 232, 0.12);
+
+  /* ── Typography ── */
   --font-display: 'Cormorant Garamond', serif;
   --font-body:    'Josefin Sans', sans-serif;
   --transition:   0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --glow:         0 0 40px rgba(74,158,202,0.28), 0 0 80px rgba(20,80,130,0.18);
-  --glow-strong:  0 0 70px rgba(74,158,202,0.5), 0 0 140px rgba(20,90,150,0.3);
+
+  /* ── Glow effects — bright cyan ── */
+  --glow:         0 0 30px rgba(30,167,232,0.45),  0 0 70px rgba(10,120,190,0.25);
+  --glow-strong:  0 0 60px rgba(30,167,232,0.75),  0 0 130px rgba(10,130,200,0.45);
+  --glow-text:    0 0 18px rgba(30,167,232,0.80);
 }
 
 html { scroll-behavior: smooth; font-size: 16px; }
@@ -54,5 +68,5 @@ section { position: relative; }
   height: 1px;
   background: var(--gold);
   display: block;
-  box-shadow: 0 0 10px rgba(74, 158, 202, 0.7);
+  box-shadow: 0 0 12px rgba(30, 167, 232, 0.9);
 }

@@ -12,7 +12,8 @@ export default function Hero() {
       <div className="hero__bg-gradient" />
 
       <div className="hero__container">
-        {/* Left */}
+
+        {/* ── LEFT ── */}
         <div className="hero__left">
           <motion.div
             className="hero__eyebrow"
@@ -92,7 +93,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right */}
+        {/* ── RIGHT — Blue glass bottle ── */}
         <motion.div
           className="hero__right"
           initial={{ opacity: 0, x: 60 }}
@@ -100,63 +101,137 @@ export default function Hero() {
           transition={{ duration: 1.1, delay: 0.6 }}
         >
           <div className="hero__image-wrapper">
+
+            {/* animated glow halo */}
             <motion.div
               className="hero__bottle-glow"
-              animate={{ opacity: [0.3, 0.6, 0.3] }}
+              animate={{ opacity: [0.55, 0.95, 0.55] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             />
+
+            {/* floating bottle */}
             <motion.div
               className="hero__bottle"
               animate={{ y: [0, -14, 0] }}
               transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
             >
-              <svg viewBox="0 0 200 400" className="hero__bottle-svg" xmlns="http://www.w3.org/2000/svg">
-                {/* Neck */}
-                <rect x="84" y="30" width="32" height="60" rx="4" fill="url(#neckGrad)" />
-                {/* Cap */}
-                <rect x="78" y="18" width="44" height="20" rx="6" fill="url(#capGrad)" />
-                {/* Cap top */}
-                <rect x="88" y="10" width="24" height="10" rx="3" fill="url(#capGrad)" />
-                {/* Body */}
-                <path d="M55 100 Q40 130 40 200 Q40 300 100 320 Q160 300 160 200 Q160 130 145 100 Z" fill="url(#bodyGrad)" />
-                {/* Glass highlight */}
-                <path d="M65 120 Q58 160 60 220 Q62 260 70 280" stroke="rgba(255,255,255,0.18)" strokeWidth="6" fill="none" strokeLinecap="round" />
-                <path d="M80 108 Q74 140 76 180" stroke="rgba(255,255,255,0.12)" strokeWidth="3" fill="none" strokeLinecap="round" />
-                {/* Label area */}
-                <rect x="62" y="160" width="76" height="90" rx="4" fill="rgba(0,0,0,0.25)" />
-                <text x="100" y="192" textAnchor="middle" fontFamily="Cormorant Garamond, serif" fontSize="13" fontWeight="300" letterSpacing="6" fill="rgba(240,235,227,0.9)">HUMN</text>
-                <line x1="74" y1="200" x2="126" y2="200" stroke="rgba(201,169,110,0.6)" strokeWidth="0.5" />
-                <text x="100" y="218" textAnchor="middle" fontFamily="Josefin Sans, sans-serif" fontSize="6" letterSpacing="4" fill="rgba(201,169,110,0.7)">NOIR · EDP</text>
-                <text x="100" y="234" textAnchor="middle" fontFamily="Josefin Sans, sans-serif" fontSize="5" letterSpacing="2" fill="rgba(168,152,128,0.6)">50 ML</text>
-                {/* Bottom */}
-                <ellipse cx="100" cy="318" rx="60" ry="10" fill="url(#bottomGrad)" opacity="0.7" />
+              <svg viewBox="0 0 200 420" className="hero__bottle-svg" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                  <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#2a2520" />
-                    <stop offset="30%" stopColor="#3d3028" />
-                    <stop offset="60%" stopColor="#1e1b17" />
-                    <stop offset="100%" stopColor="#0f0e0c" />
+                  {/* ── Blue glass body ── */}
+                  <linearGradient id="bBody" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%"   stopColor="#0d4a72" stopOpacity="0.85" />
+                    <stop offset="20%"  stopColor="#1a7ab5" stopOpacity="0.90" />
+                    <stop offset="48%"  stopColor="#2aa8e0" stopOpacity="0.95" />
+                    <stop offset="72%"  stopColor="#1a7ab5" stopOpacity="0.90" />
+                    <stop offset="100%" stopColor="#0d4a72" stopOpacity="0.85" />
                   </linearGradient>
-                  <linearGradient id="neckGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#2a2520" />
-                    <stop offset="50%" stopColor="#4a4030" />
-                    <stop offset="100%" stopColor="#1e1b17" />
+
+                  {/* ── Inner liquid glow ── */}
+                  <radialGradient id="bLiquid" cx="42%" cy="38%" r="52%">
+                    <stop offset="0%"  stopColor="#55c8f8" stopOpacity="0.55" />
+                    <stop offset="50%" stopColor="#1a8acc" stopOpacity="0.25" />
+                    <stop offset="100%" stopColor="#061420" stopOpacity="0" />
+                  </radialGradient>
+
+                  {/* ── Neck ── */}
+                  <linearGradient id="bNeck" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%"   stopColor="#0d4a72" />
+                    <stop offset="50%"  stopColor="#1e7ab8" />
+                    <stop offset="100%" stopColor="#0d4a72" />
                   </linearGradient>
-                  <linearGradient id="capGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#c9a96e" />
-                    <stop offset="40%" stopColor="#e0c98a" />
-                    <stop offset="100%" stopColor="#9e8057" />
+
+                  {/* ── Cap — dark matte black like photo ── */}
+                  <linearGradient id="bCap" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%"   stopColor="#1a1a1a" />
+                    <stop offset="50%"  stopColor="#2d2d2d" />
+                    <stop offset="100%" stopColor="#0a0a0a" />
                   </linearGradient>
-                  <linearGradient id="bottomGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#3d3028" />
-                    <stop offset="100%" stopColor="#1e1b17" />
+
+                  {/* ── Edge highlight ── */}
+                  <linearGradient id="bHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%"   stopColor="white" stopOpacity="0.35" />
+                    <stop offset="100%" stopColor="white" stopOpacity="0.05" />
+                  </linearGradient>
+
+                  {/* ── Bottom reflection ── */}
+                  <linearGradient id="bBottom" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%"   stopColor="#0d4a72" />
+                    <stop offset="50%"  stopColor="#1a7ab5" />
+                    <stop offset="100%" stopColor="#0d4a72" />
                   </linearGradient>
                 </defs>
+
+                {/* ── Cap (black square top like photo) ── */}
+                <rect x="76" y="10" width="48" height="10" rx="3" fill="url(#bCap)" />
+                <rect x="70" y="18" width="60" height="30" rx="6" fill="url(#bCap)" />
+                {/* cap highlight */}
+                <rect x="74" y="20" width="8" height="24" rx="2" fill="rgba(255,255,255,0.06)" />
+
+                {/* ── Neck ── */}
+                <rect x="82" y="46" width="36" height="56" rx="3" fill="url(#bNeck)" />
+                {/* neck glass highlight */}
+                <rect x="86" y="48" width="7" height="50" rx="2" fill="rgba(255,255,255,0.14)" />
+
+                {/* ── Bottle body — tall rectangle with soft corners like photo ── */}
+                <rect x="30" y="98" width="140" height="290" rx="8" fill="url(#bBody)" />
+                {/* liquid glow overlay */}
+                <rect x="30" y="98" width="140" height="290" rx="8" fill="url(#bLiquid)" />
+
+                {/* left edge highlight */}
+                <rect x="30" y="100" width="12" height="284" rx="6" fill="url(#bHighlight)" />
+                {/* right edge subtle */}
+                <rect x="158" y="100" width="8" height="284" rx="4" fill="rgba(255,255,255,0.08)" />
+
+                {/* ── Water-drop reflection line ── */}
+                <path d="M50 130 Q44 200 46 280" stroke="rgba(255,255,255,0.22)" strokeWidth="4" fill="none" strokeLinecap="round" />
+                <path d="M62 115 Q58 160 60 200" stroke="rgba(255,255,255,0.10)" strokeWidth="2" fill="none" strokeLinecap="round" />
+
+                {/* ── Label area ── */}
+                <rect x="50" y="165" width="100" height="130" rx="3" fill="rgba(6,20,32,0.30)" />
+
+                {/* HUMN brand mark */}
+                <text x="100" y="194" textAnchor="middle"
+                  fontFamily="Josefin Sans, sans-serif"
+                  fontSize="8" fontWeight="400" letterSpacing="5"
+                  fill="rgba(232,247,255,0.95)">HUMN.</text>
+
+                {/* Divider */}
+                <line x1="60" y1="202" x2="140" y2="202" stroke="rgba(232,247,255,0.35)" strokeWidth="0.6" />
+
+                {/* Fragrance name */}
+                <text x="100" y="230" textAnchor="middle"
+                  fontFamily="Cormorant Garamond, serif"
+                  fontSize="18" fontWeight="400" letterSpacing="2"
+                  fill="rgba(232,247,255,0.95)">AFTER</text>
+                <text x="100" y="252" textAnchor="middle"
+                  fontFamily="Cormorant Garamond, serif"
+                  fontSize="18" fontWeight="400" letterSpacing="2"
+                  fill="rgba(232,247,255,0.95)">HOURS</text>
+
+                {/* Sub-tagline */}
+                <text x="100" y="268" textAnchor="middle"
+                  fontFamily="Josefin Sans, sans-serif"
+                  fontSize="4.5" letterSpacing="3"
+                  fill="rgba(172,218,240,0.70)">SCENT FOR THE SELF</text>
+
+                {/* Volume */}
+                <text x="100" y="284" textAnchor="middle"
+                  fontFamily="Josefin Sans, sans-serif"
+                  fontSize="4" letterSpacing="2"
+                  fill="rgba(172,218,240,0.55)">50ML</text>
+
+                {/* ── Bottom edge ── */}
+                <rect x="30" y="380" width="140" height="8" rx="4" fill="url(#bBottom)" opacity="0.6" />
+
+                {/* ── Floor reflection ── */}
+                <rect x="40" y="390" width="120" height="24" rx="4" fill="url(#bBody)" opacity="0.18" />
               </svg>
             </motion.div>
+
             <div className="hero__bottle-shadow" />
           </div>
 
+          {/* floating label */}
           <motion.div
             className="hero__floating-tag"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -164,11 +239,12 @@ export default function Hero() {
             transition={{ delay: 1.4, duration: 0.6 }}
           >
             <span className="hero__floating-tag-label">New Arrival</span>
-            <span className="hero__floating-tag-name">HUMN Noir</span>
+            <span className="hero__floating-tag-name">HUMN After Hours</span>
           </motion.div>
         </motion.div>
       </div>
 
+      {/* scroll hint */}
       <motion.div
         className="hero__scroll-hint"
         initial={{ opacity: 0 }}

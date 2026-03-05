@@ -1,122 +1,32 @@
 @import "../UserDashboard/UserDashboard.css";
 
-.admin-dashboard__avatar {
-  background: rgba(74, 158, 202, 0.18) !important;
-  color: var(--gold) !important;
-}
-
-.admin-dashboard__badge {
-  color: var(--gold) !important;
-  border-color: rgba(74,158,202,0.5) !important;
-}
-
-.admin-dashboard__stats {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem; margin-bottom: 3rem;
-}
-
-.admin-dashboard__stat-card {
-  background: var(--charcoal); border: 1px solid var(--border-light);
-  padding: 2rem 1.5rem;
-  display: flex; flex-direction: column; gap: 0.5rem;
-  transition: all var(--transition);
-}
+.admin-dashboard__avatar { background: rgba(30,167,232,0.18) !important; color: var(--gold) !important; }
+.admin-dashboard__badge { color: var(--gold) !important; border-color: rgba(30,167,232,0.55) !important; }
+.admin-dashboard__stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3rem; }
+.admin-dashboard__stat-card { background: var(--charcoal); border: 1px solid var(--border-light); padding: 2rem 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; transition: all var(--transition); }
 .admin-dashboard__stat-card:hover { border-color: var(--border); box-shadow: var(--glow); }
-
-.admin-dashboard__stat-value {
-  font-family: var(--font-display); font-size: 2.2rem; font-weight: 300;
-  color: var(--gold); letter-spacing: 0.05em;
-  text-shadow: 0 0 20px rgba(74,158,202,0.4);
-}
-
-.admin-dashboard__stat-label {
-  font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted);
-}
-
+.admin-dashboard__stat-value { font-family: var(--font-display); font-size: 2.2rem; font-weight: 300; color: var(--gold); letter-spacing: 0.05em; text-shadow: var(--glow-text); }
+.admin-dashboard__stat-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
 .admin-dashboard__recent { background: var(--charcoal); border: 1px solid var(--border-light); padding: 2rem; }
-
-.admin-dashboard__sub-title {
-  font-family: var(--font-display); font-size: 1.2rem; font-weight: 300;
-  color: var(--off-white); letter-spacing: 0.08em; margin-bottom: 1.5rem;
-}
-
+.admin-dashboard__sub-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 300; color: var(--off-white); letter-spacing: 0.08em; margin-bottom: 1.5rem; }
 .admin-dashboard__actions { display: flex; gap: 1rem; }
-
-.admin-dashboard__action-btn {
-  font-family: var(--font-body); font-size: 0.62rem;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--gold); background: none;
-  border: 1px solid rgba(74,158,202,0.35);
-  padding: 0.7rem 1.5rem; cursor: pointer; transition: all var(--transition);
-}
-.admin-dashboard__action-btn:hover {
-  background: var(--gold); color: var(--black);
-  box-shadow: 0 0 20px rgba(74,158,202,0.4);
-}
-
-.admin-dashboard__add-btn {
-  font-family: var(--font-body); font-size: 0.6rem;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--black); background: var(--gold); border: none;
-  padding: 0.6rem 1.2rem; cursor: pointer; margin-left: auto;
-  transition: all var(--transition);
-  box-shadow: 0 0 12px rgba(74,158,202,0.3);
-}
-.admin-dashboard__add-btn:hover {
-  background: var(--gold-light);
-  box-shadow: 0 0 24px rgba(74,158,202,0.5);
-}
-
-.admin-dashboard__form {
-  background: var(--charcoal); border: 1px solid var(--border);
-  padding: 2rem; margin-bottom: 2rem;
-  display: flex; flex-direction: column; gap: 1.5rem;
-  box-shadow: var(--glow);
-}
-
+.admin-dashboard__action-btn { font-family: var(--font-body); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); background: none; border: 1px solid rgba(30,167,232,0.40); padding: 0.7rem 1.5rem; cursor: pointer; transition: all var(--transition); }
+.admin-dashboard__action-btn:hover { background: var(--gold); color: var(--black); box-shadow: var(--glow); }
+.admin-dashboard__add-btn { font-family: var(--font-body); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--black); background: var(--gold); border: none; padding: 0.6rem 1.2rem; cursor: pointer; margin-left: auto; transition: all var(--transition); box-shadow: 0 0 16px rgba(30,167,232,0.45); }
+.admin-dashboard__add-btn:hover { background: var(--gold-light); box-shadow: var(--glow-strong); }
+.admin-dashboard__form { background: var(--charcoal); border: 1px solid var(--border); padding: 2rem; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 1.5rem; box-shadow: var(--glow); }
 .admin-dashboard__form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
-
 .admin-dashboard__table { width: 100%; border-collapse: collapse; }
-
-.admin-dashboard__table th {
-  text-align: left; font-size: 0.58rem;
-  letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--gold); padding: 0.8rem 1rem;
-  border-bottom: 1px solid var(--border); font-weight: 300;
-  text-shadow: 0 0 8px rgba(74,158,202,0.4);
-}
-
-.admin-dashboard__table td {
-  font-size: 0.75rem; color: var(--text-secondary);
-  letter-spacing: 0.05em; padding: 1rem;
-  border-bottom: 1px solid var(--border-light); vertical-align: middle;
-}
-
-.admin-dashboard__table tr:hover td { background: rgba(74,158,202,0.03); }
-
+.admin-dashboard__table th { text-align: left; font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); font-weight: 300; text-shadow: var(--glow-text); }
+.admin-dashboard__table td { font-size: 0.75rem; color: var(--text-secondary); letter-spacing: 0.05em; padding: 1rem; border-bottom: 1px solid var(--border-light); vertical-align: middle; }
+.admin-dashboard__table tr:hover td { background: rgba(30,167,232,0.04); }
 .admin-dashboard__td-name { color: var(--off-white) !important; font-family: var(--font-display); font-size: 1rem !important; }
-.admin-dashboard__td-price { color: var(--gold) !important; font-family: var(--font-display); font-size: 1rem !important; text-shadow: 0 0 10px rgba(74,158,202,0.3); }
-
-.admin-dashboard__delete-btn {
-  font-family: var(--font-body); font-size: 0.58rem;
-  letter-spacing: 0.15em; text-transform: uppercase;
-  color: rgba(200, 80, 80, 0.8); background: none;
-  border: 1px solid rgba(200, 80, 80, 0.25);
-  padding: 0.35rem 0.8rem; cursor: pointer; transition: all var(--transition);
-}
-.admin-dashboard__delete-btn:hover {
-  background: rgba(200, 80, 80, 0.12); border-color: rgba(200, 80, 80, 0.5);
-}
-
+.admin-dashboard__td-price { color: var(--gold) !important; font-family: var(--font-display); font-size: 1rem !important; text-shadow: var(--glow-text); }
+.admin-dashboard__delete-btn { font-family: var(--font-body); font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(200,80,80,0.85); background: none; border: 1px solid rgba(200,80,80,0.28); padding: 0.35rem 0.8rem; cursor: pointer; transition: all var(--transition); }
+.admin-dashboard__delete-btn:hover { background: rgba(200,80,80,0.14); border-color: rgba(200,80,80,0.55); }
 .admin-dashboard__role-badge { font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.25rem 0.7rem; border: 1px solid; }
-.admin-dashboard__role-badge--admin { color: var(--gold); border-color: rgba(74,158,202,0.4); text-shadow: 0 0 8px rgba(74,158,202,0.4); }
+.admin-dashboard__role-badge--admin { color: var(--gold); border-color: rgba(30,167,232,0.45); text-shadow: var(--glow-text); }
 .admin-dashboard__role-badge--user { color: var(--text-secondary); border-color: var(--border-light); }
-
-.admin-dashboard__loading {
-  font-family: var(--font-display); font-style: italic;
-  color: var(--text-muted); font-size: 1rem;
-  padding: 3rem; text-align: center;
-}
-
+.admin-dashboard__loading { font-family: var(--font-display); font-style: italic; color: var(--text-muted); font-size: 1rem; padding: 3rem; text-align: center; }
 @media (max-width: 900px) { .admin-dashboard__stats { grid-template-columns: repeat(2, 1fr); } .admin-dashboard__form-grid { grid-template-columns: 1fr; } }
 @media (max-width: 540px) { .admin-dashboard__stats { grid-template-columns: 1fr 1fr; gap: 1rem; } }
