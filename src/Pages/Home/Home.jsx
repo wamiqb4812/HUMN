@@ -1,10 +1,10 @@
-import Navbar from "../../components/Navbar/Navbar";
-import Hero from "../../components/Hero/Hero";
-import Collection from "../../components/Collection/Collection";
-import About from "../../components/About/About";
-import Craft from "../../components/Craft/Craft";
-import Testimonials from "../../components/Testimonials/Testimonials";
-import Footer from "../../components/Footer/Footer";
+import Navbar from "../../Components/Navbar/Navbar";
+import Hero from "../../Components/Hero/Hero";
+import Collection from "../../Components/Collection/Collection";
+import About from "../../Components/About/About";
+import Craft from "../../Components/Craft/Craft";
+import Testimonials from "../../Components/Testimonials/Testimonials";
+import Footer from "../../Components/Footer/Footer";
 import "./Home.css";
 
 export default function Home() {
