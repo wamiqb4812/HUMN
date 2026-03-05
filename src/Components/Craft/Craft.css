@@ -1,233 +1,124 @@
 .craft {
   padding: 7rem 0;
   background: var(--warm-dark);
-  position: relative;
-  overflow: hidden;
+  position: relative; overflow: hidden;
 }
 
 .craft__ambient {
   position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 300px;
-  background: radial-gradient(ellipse, rgba(201, 169, 110, 0.07) 0%, transparent 70%);
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 700px; height: 350px;
+  background: radial-gradient(ellipse, rgba(20, 80, 160, 0.18) 0%, transparent 70%);
   pointer-events: none;
 }
 
-.craft__container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 3rem;
-}
+.craft__container { max-width: 1200px; margin: 0 auto; padding: 0 3rem; }
 
-.craft__header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
+.craft__header { text-align: center; margin-bottom: 4rem; }
 
 .craft__eyebrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  display: flex; align-items: center; justify-content: center; gap: 1rem;
   margin-bottom: 1.5rem;
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--gold);
+  font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); text-shadow: 0 0 10px rgba(74,158,202,0.5);
 }
 
 .craft__title {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 300;
-  color: var(--off-white);
-  letter-spacing: 0.05em;
-  margin-bottom: 1rem;
+  font-size: clamp(2rem, 4vw, 3rem); font-weight: 300;
+  color: var(--off-white); letter-spacing: 0.05em; margin-bottom: 1rem;
 }
 
-.craft__subtitle {
-  font-size: 0.78rem;
-  line-height: 1.9;
-  color: var(--text-secondary);
-  letter-spacing: 0.06em;
-}
+.craft__subtitle { font-size: 0.78rem; line-height: 1.9; color: var(--text-secondary); letter-spacing: 0.06em; }
 
 .craft__pyramid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 4rem;
-  padding: 2rem 0;
+  display: flex; flex-direction: column; align-items: center; gap: 0.8rem;
+  margin-bottom: 4rem; padding: 2rem 0;
   border-top: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
 }
 
-.craft__pyramid-label {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
+.craft__pyramid-label { display: flex; gap: 1.5rem; align-items: center; }
 
 .craft__pyramid-label span:first-child {
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--off-white);
-  width: 90px;
-  text-align: right;
+  font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--off-white); width: 90px; text-align: right;
 }
 
 .craft__pyramid-hint {
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
+  font-size: 0.6rem; letter-spacing: 0.12em;
   color: var(--text-muted) !important;
-  text-transform: none !important;
-  width: auto !important;
-  text-align: left !important;
+  text-transform: none !important; width: auto !important; text-align: left !important;
 }
 
 .craft__pyramid-bar {
-  height: 2px;
+  height: 1px;
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  opacity: 0.4;
+  box-shadow: 0 0 8px rgba(74,158,202,0.5);
 }
+.craft__pyramid-bar--top  { width: 120px; opacity: 0.5; }
+.craft__pyramid-bar--heart{ width: 200px; opacity: 0.7; }
+.craft__pyramid-bar--base { width: 300px; opacity: 1; }
 
-.craft__pyramid-bar--top { width: 120px; }
-.craft__pyramid-bar--heart { width: 200px; opacity: 0.6; }
-.craft__pyramid-bar--base { width: 300px; opacity: 0.8; }
-
-.craft__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 5rem;
-}
+.craft__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 5rem; }
 
 .craft__card {
   padding: 1.8rem;
   border: 1px solid var(--border-light);
-  background: rgba(10, 10, 10, 0.4);
-  transition: border-color var(--transition), background var(--transition);
+  background: rgba(3, 10, 18, 0.5);
+  transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
 }
-
 .craft__card:hover {
   border-color: var(--border);
-  background: rgba(10, 10, 10, 0.6);
+  background: rgba(3, 10, 18, 0.7);
+  box-shadow: var(--glow);
 }
 
-.craft__card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.8rem;
-}
+.craft__card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; }
 
-.craft__note-badge {
-  font-size: 0.55rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding: 0.25rem 0.7rem;
-}
+.craft__note-badge { font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.25rem 0.7rem; }
+.craft__note-badge--top   { color: var(--gold); border: 1px solid rgba(74,158,202,0.4); text-shadow: 0 0 8px rgba(74,158,202,0.5); }
+.craft__note-badge--heart { color: var(--nude); border: 1px solid rgba(168,207,224,0.3); }
+.craft__note-badge--base  { color: var(--text-secondary); border: 1px solid rgba(106,154,184,0.25); }
 
-.craft__note-badge--top {
-  color: var(--gold);
-  border: 1px solid rgba(201,169,110,0.35);
-}
-
-.craft__note-badge--heart {
-  color: var(--nude);
-  border: 1px solid rgba(214,197,174,0.3);
-}
-
-.craft__note-badge--base {
-  color: var(--text-secondary);
-  border: 1px solid rgba(168,152,128,0.25);
-}
-
-.craft__origin {
-  font-size: 0.58rem;
-  letter-spacing: 0.15em;
-  color: var(--text-muted);
-  text-transform: uppercase;
-}
+.craft__origin { font-size: 0.58rem; letter-spacing: 0.15em; color: var(--text-muted); text-transform: uppercase; }
 
 .craft__ingredient-name {
   font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 300;
-  color: var(--off-white);
-  letter-spacing: 0.05em;
-  margin-bottom: 0.6rem;
+  font-size: 1.2rem; font-weight: 300;
+  color: var(--off-white); letter-spacing: 0.05em; margin-bottom: 0.6rem;
 }
 
-.craft__ingredient-desc {
-  font-size: 0.73rem;
-  line-height: 1.8;
-  color: var(--text-secondary);
-  letter-spacing: 0.04em;
-}
+.craft__ingredient-desc { font-size: 0.73rem; line-height: 1.8; color: var(--text-secondary); letter-spacing: 0.04em; }
 
 .craft__philosophy {
-  text-align: center;
-  padding: 4rem 2rem;
+  text-align: center; padding: 4rem 2rem;
   border-top: 1px solid var(--border-light);
 }
 
 .craft__quote-mark {
   font-family: var(--font-display);
-  font-size: 5rem;
-  color: var(--gold-muted);
-  line-height: 1;
-  display: block;
-  margin-bottom: -1.5rem;
-  opacity: 0.5;
+  font-size: 5rem; color: var(--gold-muted);
+  line-height: 1; display: block; margin-bottom: -1.5rem; opacity: 0.5;
+  text-shadow: 0 0 20px rgba(74,158,202,0.3);
 }
 
 .craft__quote {
   font-family: var(--font-display);
-  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
-  font-weight: 300;
-  font-style: italic;
-  color: var(--off-white);
-  letter-spacing: 0.04em;
-  line-height: 1.7;
-  max-width: 700px;
-  margin: 1.5rem auto 1.2rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem); font-weight: 300; font-style: italic;
+  color: var(--off-white); letter-spacing: 0.04em; line-height: 1.7;
+  max-width: 700px; margin: 1.5rem auto 1.2rem;
 }
 
 .craft__quote-author {
-  font-size: 0.65rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gold);
+  font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--gold); text-shadow: 0 0 10px rgba(74,158,202,0.5);
 }
 
-@media (max-width: 900px) {
-  .craft__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .craft__container {
-    padding: 0 1.5rem;
-  }
-}
-
+@media (max-width: 900px) { .craft__grid { grid-template-columns: repeat(2, 1fr); } .craft__container { padding: 0 1.5rem; } }
 @media (max-width: 580px) {
-  .craft {
-    padding: 5rem 0;
-  }
-
-  .craft__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .craft__container {
-    padding: 0 1.2rem;
-  }
-
+  .craft { padding: 5rem 0; }
+  .craft__grid { grid-template-columns: 1fr; }
+  .craft__container { padding: 0 1.2rem; }
   .craft__pyramid-bar--base { width: 200px; }
 }
