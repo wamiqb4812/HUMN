@@ -126,20 +126,21 @@
 
 .hero__image-wrapper {
   position: relative;
-  width: 100%; max-width: 420px; margin: 0 auto;
+  width: 220px;
+  margin: 0 auto;
 }
 
-/* pulsing blue halo — mimics the studio backlight */
+/* pulsing blue halo behind bottle */
 .hero__bottle-glow {
   position: absolute;
-  inset: -30px;
-  background: radial-gradient(ellipse 65% 75% at 50% 50%,
-    rgba(30,167,232,0.38) 0%,
-    rgba(10,100,180,0.16) 50%,
+  inset: -20px;
+  background: radial-gradient(ellipse 55% 70% at 50% 55%,
+    rgba(30,167,232,0.45) 0%,
+    rgba(10,100,180,0.18) 50%,
     transparent 72%);
   pointer-events: none;
   border-radius: 50%;
-  filter: blur(24px);
+  filter: blur(28px);
   z-index: 0;
 }
 
@@ -148,26 +149,48 @@
   display: flex; align-items: center; justify-content: center;
 }
 
-/* Real product image */
+/*
+  Crop the photo to show ONLY the bottle.
+  The photo has the bottle centered horizontally,
+  occupying roughly the middle 45% width and top 90% height.
+  We use a fixed container + object-fit + object-position to punch in.
+*/
+.hero__product-img-crop {
+  width: 220px;
+  height: 420px;
+  overflow: hidden;
+  position: relative;
+  /* fade out bottom edge so it blends into page bg */
+  -webkit-mask-image: linear-gradient(to bottom,
+    black 0%,
+    black 70%,
+    transparent 100%);
+  mask-image: linear-gradient(to bottom,
+    black 0%,
+    black 70%,
+    transparent 100%);
+}
+
 .hero__product-img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  object-fit: contain;
-  border-radius: 4px;
-  /* subtle edge glow to blend into dark bg */
+  width: 480px;          /* render image wider than crop window */
+  max-width: none;
+  height: 520px;
+  object-fit: cover;
+  /* shift so the bottle (center of photo) is visible */
+  object-position: center top;
+  margin-left: -130px;   /* nudge left to center the bottle */
+  display: block;
   filter:
-    drop-shadow(0 0 30px rgba(30,167,232,0.55))
-    drop-shadow(0 0 80px rgba(10,120,200,0.30))
-    drop-shadow(0 30px 60px rgba(0,0,0,0.70));
+    drop-shadow(0 0 25px rgba(30,167,232,0.60))
+    drop-shadow(0 0 60px rgba(10,120,200,0.35));
 }
 
 .hero__bottle-shadow {
-  position: absolute; bottom: -20px; left: 50%;
+  position: absolute; bottom: -16px; left: 50%;
   transform: translateX(-50%);
-  width: 60%; height: 24px;
-  background: radial-gradient(ellipse, rgba(30,167,232,0.28) 0%, transparent 70%);
-  filter: blur(14px);
+  width: 100px; height: 20px;
+  background: radial-gradient(ellipse, rgba(30,167,232,0.35) 0%, transparent 70%);
+  filter: blur(12px);
   z-index: 0;
 }
 
@@ -208,9 +231,9 @@
   box-shadow: 0 0 8px rgba(30,167,232,0.8);
 }
 
-/* ── Responsive ── */
 @media (max-width: 1024px) {
-  .hero__image-wrapper { max-width: 340px; }
+  .hero__product-img-crop { width: 180px; height: 360px; }
+  .hero__product-img { width: 400px; height: 440px; margin-left: -110px; }
 }
 
 @media (max-width: 900px) {
@@ -227,13 +250,17 @@
   .hero__actions { justify-content: center; }
   .hero__stats { justify-content: center; }
   .hero__right { order: -1; }
-  .hero__image-wrapper { max-width: 260px; }
+  .hero__image-wrapper { width: 160px; }
+  .hero__product-img-crop { width: 160px; height: 310px; }
+  .hero__product-img { width: 360px; height: 390px; margin-left: -100px; }
   .hero__floating-tag { right: -10px; top: 8%; }
 }
 
 @media (max-width: 480px) {
   .hero__title { font-size: 4rem; }
   .hero__container { padding: 5.5rem 1.2rem 4rem; }
-  .hero__image-wrapper { max-width: 220px; }
+  .hero__image-wrapper { width: 130px; }
+  .hero__product-img-crop { width: 130px; height: 260px; }
+  .hero__product-img { width: 300px; height: 330px; margin-left: -85px; }
   .hero__floating-tag { display: none; }
 }

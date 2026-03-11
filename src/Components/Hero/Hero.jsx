@@ -118,11 +118,13 @@ export default function Hero() {
               animate={{ y: [0, -14, 0] }}
               transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
             >
-              <img
-                src={bottleImg}
-                alt="HUMN After Hours Fragrance"
-                className="hero__product-img"
-              />
+              <div className="hero__product-img-crop">
+                <img
+                  src={bottleImg}
+                  alt="HUMN After Hours Fragrance"
+                  className="hero__product-img"
+                />
+              </div>
             </motion.div>
             <div className="hero__bottle-shadow" />
           </div>
