@@ -7,22 +7,18 @@
   background: var(--black);
 }
 
-/* Animated radial background — mimics the photo's bright back-glow */
 .hero__bg-grain {
   position: absolute; inset: 0; pointer-events: none; z-index: 1;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  opacity: 0.55;
+  opacity: 0.5;
 }
 
 .hero__bg-gradient {
   position: absolute; inset: 0; z-index: 1;
   background:
-    /* bright halo behind bottle */
-    radial-gradient(ellipse 55% 65% at 72% 52%, rgba(30,167,232,0.22) 0%, transparent 60%),
-    /* soft top-right bloom */
-    radial-gradient(ellipse 40% 50% at 85% 15%, rgba(15,120,200,0.14) 0%, transparent 60%),
-    /* dark vignette bottom */
-    radial-gradient(ellipse 80% 40% at 50% 105%, rgba(0,0,0,0.7) 0%, transparent 60%);
+    radial-gradient(ellipse 60% 70% at 72% 50%, rgba(30,167,232,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 85% 10%, rgba(15,120,200,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 35% at 50% 108%, rgba(0,0,0,0.75) 0%, transparent 55%);
 }
 
 /* ── Layout ── */
@@ -38,7 +34,7 @@
   min-height: 100vh;
 }
 
-/* ── Left column ── */
+/* ── Left ── */
 .hero__left {
   display: flex;
   flex-direction: column;
@@ -58,7 +54,7 @@
   font-size: clamp(5rem, 11vw, 9.5rem);
   font-weight: 300; letter-spacing: 0.15em; line-height: 1;
   color: var(--off-white); margin: 0;
-  text-shadow: 0 0 60px rgba(30,167,232,0.18);
+  text-shadow: 0 0 60px rgba(30,167,232,0.15);
 }
 
 .hero__tagline {
@@ -87,7 +83,7 @@
 .hero__btn--primary {
   background: var(--gold); color: var(--black);
   border: 1px solid var(--gold);
-  box-shadow: 0 0 28px rgba(30,167,232,0.60), inset 0 1px 0 rgba(255,255,255,0.15);
+  box-shadow: 0 0 28px rgba(30,167,232,0.60), inset 0 1px 0 rgba(255,255,255,0.12);
 }
 .hero__btn--primary:hover {
   background: var(--gold-light); border-color: var(--gold-light);
@@ -100,7 +96,7 @@
 }
 .hero__btn--ghost:hover {
   border-color: var(--gold); color: var(--gold);
-  box-shadow: 0 0 20px rgba(30,167,232,0.25);
+  box-shadow: 0 0 20px rgba(30,167,232,0.22);
 }
 
 .hero__stats {
@@ -122,7 +118,7 @@
   color: var(--text-muted);
 }
 
-/* ── Right column ── */
+/* ── Right ── */
 .hero__right {
   position: relative;
   display: flex; align-items: center; justify-content: center;
@@ -130,47 +126,61 @@
 
 .hero__image-wrapper {
   position: relative;
-  width: 100%; max-width: 360px; margin: 0 auto;
+  width: 100%; max-width: 420px; margin: 0 auto;
 }
 
+/* pulsing blue halo — mimics the studio backlight */
 .hero__bottle-glow {
   position: absolute;
-  inset: -40px;
-  background: radial-gradient(ellipse 60% 75% at 50% 52%,
-    rgba(30,167,232,0.50) 0%,
-    rgba(10,100,180,0.22) 45%,
-    transparent 70%);
+  inset: -30px;
+  background: radial-gradient(ellipse 65% 75% at 50% 50%,
+    rgba(30,167,232,0.38) 0%,
+    rgba(10,100,180,0.16) 50%,
+    transparent 72%);
   pointer-events: none;
   border-radius: 50%;
-  filter: blur(20px);
+  filter: blur(24px);
+  z-index: 0;
 }
 
-.hero__bottle { display: flex; align-items: center; justify-content: center; }
+.hero__bottle {
+  position: relative; z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+}
 
-.hero__bottle-svg {
-  width: 100%; height: auto;
+/* Real product image */
+.hero__product-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  /* subtle edge glow to blend into dark bg */
   filter:
-    drop-shadow(0 0  25px rgba(30,167,232,0.70))
-    drop-shadow(0 0  70px rgba(10,120,200,0.45))
-    drop-shadow(0 20px 50px rgba(0,0,0,0.65));
+    drop-shadow(0 0 30px rgba(30,167,232,0.55))
+    drop-shadow(0 0 80px rgba(10,120,200,0.30))
+    drop-shadow(0 30px 60px rgba(0,0,0,0.70));
 }
 
 .hero__bottle-shadow {
-  position: absolute; bottom: -24px; left: 50%;
+  position: absolute; bottom: -20px; left: 50%;
   transform: translateX(-50%);
-  width: 110px; height: 22px;
-  background: radial-gradient(ellipse, rgba(30,167,232,0.35) 0%, transparent 70%);
-  filter: blur(12px);
+  width: 60%; height: 24px;
+  background: radial-gradient(ellipse, rgba(30,167,232,0.28) 0%, transparent 70%);
+  filter: blur(14px);
+  z-index: 0;
 }
 
+/* floating info tag */
 .hero__floating-tag {
-  position: absolute; right: -18px; top: 18%;
+  position: absolute; right: -18px; top: 22%;
   background: rgba(6, 20, 32, 0.92);
   border: 1px solid var(--border);
-  padding: 0.8rem 1.2rem;
-  display: flex; flex-direction: column; gap: 0.2rem;
-  backdrop-filter: blur(12px);
+  padding: 0.85rem 1.3rem;
+  display: flex; flex-direction: column; gap: 0.25rem;
+  backdrop-filter: blur(14px);
   box-shadow: var(--glow);
+  z-index: 2;
 }
 
 .hero__floating-tag-label {
@@ -179,7 +189,7 @@
 }
 
 .hero__floating-tag-name {
-  font-family: var(--font-display); font-size: 0.95rem;
+  font-family: var(--font-display); font-size: 1rem;
   color: var(--off-white); letter-spacing: 0.1em;
 }
 
@@ -199,24 +209,31 @@
 }
 
 /* ── Responsive ── */
+@media (max-width: 1024px) {
+  .hero__image-wrapper { max-width: 340px; }
+}
+
 @media (max-width: 900px) {
   .hero__container {
     grid-template-columns: 1fr;
-    padding: 7rem 1.5rem 5rem;
-    gap: 3rem; text-align: center;
+    padding: 6.5rem 1.5rem 5rem;
+    gap: 2.5rem;
+    text-align: center;
     min-height: unset;
-    padding-top: 6rem;
   }
   .hero__left { align-items: center; }
   .hero__eyebrow { justify-content: center; }
-  .hero__description { text-align: center; max-width: 480px; }
+  .hero__description { text-align: center; max-width: 500px; }
   .hero__actions { justify-content: center; }
   .hero__stats { justify-content: center; }
   .hero__right { order: -1; }
-  .hero__image-wrapper { max-width: 200px; }
-  .hero__floating-tag { right: 0; top: 5%; }
+  .hero__image-wrapper { max-width: 260px; }
+  .hero__floating-tag { right: -10px; top: 8%; }
 }
+
 @media (max-width: 480px) {
   .hero__title { font-size: 4rem; }
   .hero__container { padding: 5.5rem 1.2rem 4rem; }
+  .hero__image-wrapper { max-width: 220px; }
+  .hero__floating-tag { display: none; }
 }
